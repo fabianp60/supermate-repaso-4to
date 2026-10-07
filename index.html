@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>¡SuperMate 4° con Lu! 🚀 - Repaso Interactivo de Matemáticas</title>
+  <meta name="description" content="Minijuegos y recursos interactivos de matemáticas de 4to grado para Lu. Basado en el temario de la docente Andrea Guerrero Gallego para la evaluación del 13 de agosto.">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Top Sticky Navigation Header -->
+  <header class="top-header">
+    <div class="header-container">
+      <div class="logo-group" onclick="App.showDashboard()">
+        <span class="logo-icon">🚀</span>
+        <span class="logo-text">SuperMate 4°</span>
+      </div>
+
+      <div class="user-stats">
+        <div class="star-badge" title="Estrellas acumuladas por Lu">
+          <span>⭐</span>
+          <span id="total-stars-count">0</span> / 21
+        </div>
+
+        <button class="icon-btn" id="sound-btn" onclick="App.toggleSound()" title="Activar/Silenciar Sonido">🔊</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Body -->
+  <main class="main-wrapper">
+
+    <!-- Hero Card Greeting -->
+    <section class="hero-card pop-animation">
+      <div class="hero-text">
+        <h1 class="hero-title">¡Hola Lu! 👋🌟</h1>
+        <p class="hero-subtitle">
+          ¡Bienvenida a tu portal de repaso de matemáticas! Aquí podrás practicar jugando y dominar los 7 temas que indicó tu maestra <strong>Andrea Guerrero</strong>.
+        </p>
+        <div class="exam-notice">
+          📅 Examen de Matemáticas: <strong>Jueves 13 de Agosto</strong>
+        </div>
+      </div>
+      <div class="mascot-avatar" title="Mati el Búho Sabio">🦉</div>
+    </section>
+
+    <h2 class="grid-title">🎯 Elige un tema para estudiar y ganar estrellas</h2>
+
+    <!-- Topics Cards Grid -->
+    <div class="topics-grid">
+
+      <!-- Topic 1 -->
+      <article class="topic-card" style="--card-accent: #6C5CE7; --card-bg-sub: rgba(108, 92, 231, 0.1);" onclick="App.openGame('plano')">
+        <div>
+          <div class="card-icon-container">📍</div>
+          <span class="topic-number">Tema 1 • Págs 143-147</span>
+          <h3 class="topic-name">Plano Cartesiano y Traslación</h3>
+          <p class="topic-desc">Ubica pares ordenados (X, Y) en la cuadrícula y traslada figuras geométricas a nuevas posiciones.</p>
+        </div>
+        <div class="topic-footer">
+          <span class="topic-stars" id="stars-plano">☆☆☆</span>
+          <button class="btn-play">Practicar ➔</button>
+        </div>
+      </article>
+
+      <!-- Topic 2 -->
+      <article class="topic-card" style="--card-accent: #00CEC9; --card-bg-sub: rgba(0, 206, 201, 0.1);" onclick="App.openGame('congruencia')">
+        <div>
+          <div class="card-icon-container">🎨</div>
+          <span class="topic-number">Tema 2 • Págs 148-153</span>
+          <h3 class="topic-name">Congruencia y Semejanza</h3>
+          <p class="topic-desc">Compara figuras: reconoce si son exactamente iguales (congruentes) o de igual forma y distinto tamaño (semejantes).</p>
+        </div>
+        <div class="topic-footer">
+          <span class="topic-stars" id="stars-congruencia">☆☆☆</span>
+          <button class="btn-play">Practicar ➔</button>
+        </div>
+      </article>
+
+      <!-- Topic 3 -->
+      <article class="topic-card" style="--card-accent: #FD79A8; --card-bg-sub: rgba(253, 121, 168, 0.1);" onclick="App.openGame('jerarquia')">
+        <div>
+          <div class="card-icon-container">⚡</div>
+          <span class="topic-number">Tema 3 • Págs 48-55 y 63-65</span>
+          <h3 class="topic-name">Jerarquía de Operaciones</h3>
+          <p class="topic-desc">Resuelve expresiones siguiendo el orden correcto: (Paréntesis $\rightarrow$ Potencias y Raíces $\rightarrow$ × ÷ $\rightarrow$ + -).</p>
+        </div>
+        <div class="topic-footer">
+          <span class="topic-stars" id="stars-jerarquia">☆☆☆</span>
+          <button class="btn-play">Practicar ➔</button>
+        </div>
+      </article>
+
+      <!-- Topic 4 -->
+      <article class="topic-card" style="--card-accent: #00B894; --card-bg-sub: rgba(0, 184, 148, 0.1);" onclick="App.openGame('diagrama_circular')">
+        <div>
+          <div class="card-icon-container">📊</div>
+          <span class="topic-number">Tema 4 • Taller de Clase</span>
+          <h3 class="topic-name">Diagrama Circular</h3>
+          <p class="topic-desc">Lee e interpreta información en gráficos de pastel (50%, 25%, proporciones) sin usar transportador.</p>
+        </div>
+        <div class="topic-footer">
+          <span class="topic-stars" id="stars-diagrama_circular">☆☆☆</span>
+          <button class="btn-play">Practicar ➔</button>
+        </div>
+      </article>
+
+      <!-- Topic 5 -->
+      <article class="topic-card" style="--card-accent: #E17055; --card-bg-sub: rgba(225, 112, 85, 0.1);" onclick="App.openGame('fracciones')">
+        <div>
+          <div class="card-icon-container">🍰</div>
+          <span class="topic-number">Tema 5 • Apuntes del Cuaderno</span>
+          <h3 class="topic-name">Fracciones de un Número y Suma Homogénea</h3>
+          <p class="topic-desc">Calcula fracciones de cantidades (ej: 3/4 de 20) y suma fracciones con el mismo denominador.</p>
+        </div>
+        <div class="topic-footer">
+          <span class="topic-stars" id="stars-fracciones">☆☆☆</span>
+          <button class="btn-play">Practicar ➔</button>
+        </div>
+      </article>
+
+      <!-- Topic 6 -->
+      <article class="topic-card" style="--card-accent: #0984E3; --card-bg-sub: rgba(9, 132, 227, 0.1);" onclick="App.openGame('areas')">
+        <div>
+          <div class="card-icon-container">📐</div>
+          <span class="topic-number">Tema 6 • Págs 227-236</span>
+          <h3 class="topic-name">Área de Rectángulos, Cuadrados y Triángulos</h3>
+          <p class="topic-desc">Calcula y comprende la superficie de las figuras geométricas usando sus fórmulas ($l^2$, $b \times h$, $(b \times h)/2$).</p>
+        </div>
+        <div class="topic-footer">
+          <span class="topic-stars" id="stars-areas">☆☆☆</span>
+          <button class="btn-play">Practicar ➔</button>
+        </div>
+      </article>
+
+      <!-- Topic 7 -->
+      <article class="topic-card" style="--card-accent: #FDCB6E; --card-bg-sub: rgba(253, 203, 110, 0.1);" onclick="App.openGame('promedio')">
+        <div>
+          <div class="card-icon-container">⚖️</div>
+          <span class="topic-number">Tema 7 • Págs 303-306</span>
+          <h3 class="topic-name">Media Aritmética o Promedio</h3>
+          <p class="topic-desc">Encuentra el valor promedio o punto de equilibrio sumando los datos y dividiendo por la cantidad total.</p>
+        </div>
+        <div class="topic-footer">
+          <span class="topic-stars" id="stars-promedio">☆☆☆</span>
+          <button class="btn-play">Practicar ➔</button>
+        </div>
+      </article>
+
+      <!-- Grand Exam Banner -->
+      <article class="exam-card-wrapper">
+        <div class="exam-info">
+          <h3>🏆 Gran Desafío de Examen Final</h3>
+          <p>Pon a prueba tus conocimientos en un simulacro especial de 14 preguntas sobre los 7 temas. ¡Obtén tu Diploma de Honor impreso!</p>
+          <button class="btn-exam" onclick="App.openGame('examen')">🌟 Iniciar Gran Examen Final</button>
+        </div>
+        <div style="font-size: 5rem;">🎓</div>
+      </article>
+
+    </div>
+  </main>
+
+  <!-- Game and Theory Modal -->
+  <div class="modal-overlay" id="game-modal">
+    <div class="modal-window">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <span class="modal-icon" id="modal-game-icon">📍</span>
+          <h3 class="modal-title" id="modal-game-title">Título del Tema</h3>
+        </div>
+        <button class="btn-close-modal" onclick="App.closeModal()">✕</button>
+      </div>
+
+      <div class="modal-tabs">
+        <button class="tab-btn active" id="tab-btn-game" onclick="App.switchTab('game')">🎮 Minijuego Interactivo</button>
+        <button class="tab-btn" id="tab-btn-theory" onclick="App.switchTab('theory')">📖 Repaso Teórico Paso a Paso</button>
+      </div>
+
+      <div class="modal-body">
+        <div id="game-area">
+          <!-- Game content inserted dynamically -->
+        </div>
+
+        <div id="theory-area" style="display: none;">
+          <!-- Theory content inserted dynamically -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/sound.js"></script>
+  <script src="js/games/plano.js"></script>
+  <script src="js/games/congruencia.js"></script>
+  <script src="js/games/jerarquia.js"></script>
+  <script src="js/games/diagrama_circular.js"></script>
+  <script src="js/games/fracciones.js"></script>
+  <script src="js/games/areas.js"></script>
+  <script src="js/games/promedio.js"></script>
+  <script src="js/games/examen.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
